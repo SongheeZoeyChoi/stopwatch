@@ -38,18 +38,66 @@
         <!--설정-->
         <scene sceneID="wLg-4r-xhT">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="r2I-wn-7qc" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="r2I-wn-7qc" customClass="SettingsViewController" customModule="stopwatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HMX-Vh-Iv7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IGY-WQ-5k5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BK2-aF-GgR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfV-un-KVx">
+                                                <rect key="frame" x="285" y="14.5" width="106" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="106" id="WUu-3j-4O8"/>
+                                                    <constraint firstAttribute="height" constant="31" id="rbR-0i-f1w"/>
+                                                </constraints>
+                                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="로그아웃"/>
+                                                <connections>
+                                                    <action selector="onClickLogout:" destination="r2I-wn-7qc" eventType="touchUpInside" id="Cha-if-0fR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="WfV-un-KVx" secondAttribute="trailing" constant="23" id="95h-zo-6Ug"/>
+                                            <constraint firstAttribute="height" constant="60" id="P2J-u7-bVE"/>
+                                            <constraint firstItem="WfV-un-KVx" firstAttribute="centerY" secondItem="BK2-aF-GgR" secondAttribute="centerY" id="jLF-AE-JGr"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czM-Ry-MrF">
+                                        <rect key="frame" x="0.0" y="60" width="414" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="ExO-Iz-Jqv"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzL-98-spl">
+                                        <rect key="frame" x="0.0" y="120" width="414" height="605"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wsA-Zx-WXr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IGY-WQ-5k5" firstAttribute="bottom" secondItem="wsA-Zx-WXr" secondAttribute="bottom" id="Swl-tn-5bt"/>
+                            <constraint firstItem="IGY-WQ-5k5" firstAttribute="leading" secondItem="wsA-Zx-WXr" secondAttribute="leading" id="aK5-rP-wub"/>
+                            <constraint firstItem="IGY-WQ-5k5" firstAttribute="top" secondItem="wsA-Zx-WXr" secondAttribute="top" id="bEg-to-Wun"/>
+                            <constraint firstItem="IGY-WQ-5k5" firstAttribute="trailing" secondItem="wsA-Zx-WXr" secondAttribute="trailing" id="bgY-DL-lKC"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" id="Z4m-5h-WdW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAu-5y-6t3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="897"/>
+            <point key="canvasLocation" x="742.02898550724649" y="896.65178571428567"/>
         </scene>
         <!--Item-->
         <scene sceneID="vZg-j4-wsQ">
@@ -100,6 +148,12 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
