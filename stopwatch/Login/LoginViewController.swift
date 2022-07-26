@@ -30,7 +30,8 @@ class LoginViewController: UIViewController {
             print(user)
             
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            guard let vc = sb.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {return}
+            guard let vc = sb.instantiateViewController(withIdentifier: "MainNavigationViewController") as? MainNavigationViewController else {return}
+            vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true)
             
         }
