@@ -17,6 +17,11 @@
 		6BCCA231288F6C5800CF8C65 /* stopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA230288F6C5800CF8C65 /* stopwatchTests.swift */; };
 		6BCCA23B288F6C5800CF8C65 /* stopwatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA23A288F6C5800CF8C65 /* stopwatchUITests.swift */; };
 		6BCCA23D288F6C5800CF8C65 /* stopwatchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA23C288F6C5800CF8C65 /* stopwatchUITestsLaunchTests.swift */; };
+		6BCCA24B288F6E2600CF8C65 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 6BCCA24A288F6E2600CF8C65 /* GoogleSignIn */; };
+		6BCCA24D288F7CA700CF8C65 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BCCA24C288F7CA700CF8C65 /* Login.storyboard */; };
+		6BCCA24F288F7D1F00CF8C65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA24E288F7D1F00CF8C65 /* LoginViewController.swift */; };
+		6BCCA251288F7E9B00CF8C65 /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA250288F7E9B00CF8C65 /* StopwatchViewController.swift */; };
+		6BCCA253288F843F00CF8C65 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA252288F843F00CF8C65 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,10 @@
 		6BCCA236288F6C5800CF8C65 /* stopwatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stopwatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCCA23A288F6C5800CF8C65 /* stopwatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopwatchUITests.swift; sourceTree = "<group>"; };
 		6BCCA23C288F6C5800CF8C65 /* stopwatchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopwatchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6BCCA24C288F7CA700CF8C65 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		6BCCA24E288F7D1F00CF8C65 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6BCCA250288F7E9B00CF8C65 /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
+		6BCCA252288F843F00CF8C65 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BCCA24B288F6E2600CF8C65 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,11 +114,15 @@
 				6BCCA216288F6C5600CF8C65 /* AppDelegate.swift */,
 				6BCCA218288F6C5600CF8C65 /* SceneDelegate.swift */,
 				6BCCA21A288F6C5600CF8C65 /* ViewController.swift */,
+				6BCCA24C288F7CA700CF8C65 /* Login.storyboard */,
+				6BCCA24E288F7D1F00CF8C65 /* LoginViewController.swift */,
 				6BCCA21C288F6C5600CF8C65 /* Main.storyboard */,
 				6BCCA222288F6C5800CF8C65 /* Assets.xcassets */,
 				6BCCA224288F6C5800CF8C65 /* LaunchScreen.storyboard */,
 				6BCCA227288F6C5800CF8C65 /* Info.plist */,
 				6BCCA21F288F6C5600CF8C65 /* stopwatch.xcdatamodeld */,
+				6BCCA250288F7E9B00CF8C65 /* StopwatchViewController.swift */,
+				6BCCA252288F843F00CF8C65 /* Const.swift */,
 			);
 			path = stopwatch;
 			sourceTree = "<group>";
@@ -146,6 +160,9 @@
 			dependencies = (
 			);
 			name = stopwatch;
+			packageProductDependencies = (
+				6BCCA24A288F6E2600CF8C65 /* GoogleSignIn */,
+			);
 			productName = stopwatch;
 			productReference = 6BCCA213288F6C5600CF8C65 /* stopwatch.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +235,9 @@
 				Base,
 			);
 			mainGroup = 6BCCA20A288F6C5600CF8C65;
+			packageReferences = (
+				6BCCA249288F6E2600CF8C65 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 6BCCA214288F6C5600CF8C65 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BCCA24D288F7CA700CF8C65 /* Login.storyboard in Resources */,
 				6BCCA226288F6C5800CF8C65 /* LaunchScreen.storyboard in Resources */,
 				6BCCA223288F6C5800CF8C65 /* Assets.xcassets in Resources */,
 				6BCCA21E288F6C5600CF8C65 /* Main.storyboard in Resources */,
@@ -261,10 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BCCA251288F7E9B00CF8C65 /* StopwatchViewController.swift in Sources */,
 				6BCCA21B288F6C5600CF8C65 /* ViewController.swift in Sources */,
 				6BCCA217288F6C5600CF8C65 /* AppDelegate.swift in Sources */,
 				6BCCA219288F6C5600CF8C65 /* SceneDelegate.swift in Sources */,
+				6BCCA24F288F7D1F00CF8C65 /* LoginViewController.swift in Sources */,
 				6BCCA221288F6C5600CF8C65 /* stopwatch.xcdatamodeld in Sources */,
+				6BCCA253288F843F00CF8C65 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -424,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -446,7 +470,6 @@
 				INFOPLIST_FILE = stopwatch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +497,6 @@
 				INFOPLIST_FILE = stopwatch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -606,6 +628,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6BCCA249288F6E2600CF8C65 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6BCCA24A288F6E2600CF8C65 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BCCA249288F6E2600CF8C65 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6BCCA21F288F6C5600CF8C65 /* stopwatch.xcdatamodeld */ = {
