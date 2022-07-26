@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StopwatchViewController: UIViewController {
+class StopwatchViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

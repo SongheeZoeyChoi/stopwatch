@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B08F21A288FD40B00698ADE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B08F219288FD40B00698ADE /* BaseViewController.swift */; };
 		6BAC7B81288F9B080067AF0B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAC7B80288F9B080067AF0B /* SettingsViewController.swift */; };
 		6BCCA217288F6C5600CF8C65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA216288F6C5600CF8C65 /* AppDelegate.swift */; };
 		6BCCA219288F6C5600CF8C65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA218288F6C5600CF8C65 /* SceneDelegate.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B08F219288FD40B00698ADE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6BAC7B80288F9B080067AF0B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6BCCA213288F6C5600CF8C65 /* stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCCA216288F6C5600CF8C65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				6BCCA216288F6C5600CF8C65 /* AppDelegate.swift */,
 				6BCCA218288F6C5600CF8C65 /* SceneDelegate.swift */,
+				6B08F219288FD40B00698ADE /* BaseViewController.swift */,
 				6BCCA258288F9A1B00CF8C65 /* Login */,
 				6BCCA259288F9A2300CF8C65 /* Views */,
 				6BAC7B7F288F9AEB0067AF0B /* Stopwatch */,
@@ -325,6 +328,7 @@
 				6BAC7B81288F9B080067AF0B /* SettingsViewController.swift in Sources */,
 				6BCCA217288F6C5600CF8C65 /* AppDelegate.swift in Sources */,
 				6BCCA219288F6C5600CF8C65 /* SceneDelegate.swift in Sources */,
+				6B08F21A288FD40B00698ADE /* BaseViewController.swift in Sources */,
 				6BCCA24F288F7D1F00CF8C65 /* LoginViewController.swift in Sources */,
 				6BCCA255288F8BC000CF8C65 /* MainNavigationViewController.swift in Sources */,
 				6BCCA221288F6C5600CF8C65 /* stopwatch.xcdatamodeld in Sources */,

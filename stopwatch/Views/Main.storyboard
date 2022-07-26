@@ -50,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfV-un-KVx">
-                                                <rect key="frame" x="285" y="14.5" width="106" height="31"/>
+                                                <rect key="frame" x="288" y="14.5" width="106" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="106" id="WUu-3j-4O8"/>
                                                     <constraint firstAttribute="height" constant="31" id="rbR-0i-f1w"/>
@@ -65,16 +65,39 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="WfV-un-KVx" secondAttribute="trailing" constant="23" id="95h-zo-6Ug"/>
+                                            <constraint firstAttribute="trailing" secondItem="WfV-un-KVx" secondAttribute="trailing" constant="20" id="95h-zo-6Ug"/>
                                             <constraint firstAttribute="height" constant="60" id="P2J-u7-bVE"/>
                                             <constraint firstItem="WfV-un-KVx" firstAttribute="centerY" secondItem="BK2-aF-GgR" secondAttribute="centerY" id="jLF-AE-JGr"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czM-Ry-MrF">
                                         <rect key="frame" x="0.0" y="60" width="414" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appearance Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaj-DC-9L2">
+                                                <rect key="frame" x="25" y="20" width="140" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h1f-8I-7bd">
+                                                <rect key="frame" x="209" y="14.5" width="185" height="32"/>
+                                                <segments>
+                                                    <segment title="Device"/>
+                                                    <segment title="Light"/>
+                                                    <segment title="Dark"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="onClickSwitchAppearance:" destination="r2I-wn-7qc" eventType="valueChanged" id="CCY-OF-n0v"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
+                                            <constraint firstItem="xaj-DC-9L2" firstAttribute="leading" secondItem="czM-Ry-MrF" secondAttribute="leading" constant="25" id="ESR-vZ-T5f"/>
                                             <constraint firstAttribute="height" constant="60" id="ExO-Iz-Jqv"/>
+                                            <constraint firstItem="xaj-DC-9L2" firstAttribute="centerY" secondItem="czM-Ry-MrF" secondAttribute="centerY" id="GRz-4X-dFS"/>
+                                            <constraint firstAttribute="trailing" secondItem="h1f-8I-7bd" secondAttribute="trailing" constant="20" id="aUi-eC-hWq"/>
+                                            <constraint firstItem="h1f-8I-7bd" firstAttribute="centerY" secondItem="czM-Ry-MrF" secondAttribute="centerY" id="lyf-i5-jMC"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzL-98-spl">

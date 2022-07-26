@@ -8,7 +8,7 @@
 import UIKit
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
 
     let signInConfig = GIDConfiguration(clientID: Const.googleSignInClientID)
     
