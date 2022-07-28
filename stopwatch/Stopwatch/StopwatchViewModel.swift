@@ -38,17 +38,19 @@ final class StopwatchViewModel {
     
     var timer: Timer?
     var isPlaying: Bool = false
-    var time: Double = 0
+    let TIME_INTERVAL = 0.01
+    var time = Double()
+    var lappedTime = Double()
     
     let mainTime = CurrentValueSubject<Double, Never>(0)
     
     // input : click action //
     func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            self.time += 0.01
+        timer = Timer.scheduledTimer(withTimeInterval: TIME_INTERVAL, repeats: true) { _ in
+            self.time += self.TIME_INTERVAL
+            self.lappedTime += self.TIME_INTERVAL
             self.mainTime.send(self.time)
         }
-        
         // TODO: 콜렉션뷰 맨 나중에 기록되는 라벨 비동기 연결
     }
     
@@ -57,22 +59,38 @@ final class StopwatchViewModel {
     }
     
     func lapTimer() {
-        // 랩 눌렀을 때
-        // time -> 콜렉션 뷰 items에 넣기
-        let item = RecordInfo(time: self.time)
+        let item = RecordInfo(title: "Lap \(items.count + 1)",time: lappedTime)
         self.items.append(item)
+        self.lappedTime = 0
     }
     
     func resetTimer() {
         self.invalidateTimer()
         self.time = 0
-        self.items = [] // TODO: 초기화가 왜 안될까? 
+        self.items = []
         self.mainTime.send(self.time)
     }
     
     func invalidateTimer() {
         timer?.invalidate()
         timer = nil
+    }
+    
+    func onClickStartButton() {
+        if isPlaying {
+            self.stopTimer()
+        } else {
+            self.startTimer()
+        }
+        isPlaying.toggle()
+    }
+    
+    func onClickResetButton() {
+        if isPlaying {
+            self.lapTimer()
+        } else {
+            self.resetTimer()
+        }
     }
     
 }

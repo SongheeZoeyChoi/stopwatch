@@ -16,9 +16,9 @@ class RecordCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func configure(item: RecordInfo, index: Int) {
-        lapLabel.text = "lap\(index + 1)"
-        recordTimeLabel.text = "\(String(format: "%.2f", item.time))"
+    func configure(item: RecordInfo) {
+        lapLabel.text = item.title
+        recordTimeLabel.text = Utils.transStopwatchTime(item.time)
     }
     
 }

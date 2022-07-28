@@ -18,8 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="5Y6-Nf-7bj">
-                                <rect key="frame" x="30" y="185" width="354" height="95.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="5Y6-Nf-7bj">
+                                <rect key="frame" x="45" y="185" width="324" height="95.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="324" id="b8j-nl-eAq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -106,7 +109,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pet-Tr-rVV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0eJ-ih-AnS"/>
-                            <constraint firstItem="5Y6-Nf-7bj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="3V5-t4-R5A"/>
                             <constraint firstItem="pet-Tr-rVV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AAr-ZR-X4O"/>
                             <constraint firstItem="VNV-Oy-9Pz" firstAttribute="top" secondItem="5Y6-Nf-7bj" secondAttribute="bottom" constant="130" id="ATo-qe-cLI"/>
                             <constraint firstItem="RA7-iG-Yna" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="T5A-qX-MuG"/>
@@ -115,7 +117,6 @@
                             <constraint firstItem="VNV-Oy-9Pz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="bXt-hn-X6w"/>
                             <constraint firstItem="5Y6-Nf-7bj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c4U-eo-3Le"/>
                             <constraint firstItem="pet-Tr-rVV" firstAttribute="top" secondItem="VNV-Oy-9Pz" secondAttribute="bottom" constant="10" id="oD8-yD-crU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Y6-Nf-7bj" secondAttribute="trailing" constant="30" id="ska-zS-rGO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RA7-iG-Yna" secondAttribute="trailing" constant="80" id="w2o-vi-mjq"/>
                         </constraints>
                     </view>

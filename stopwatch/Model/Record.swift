@@ -8,5 +8,6 @@
 import Foundation
 
 struct RecordInfo: Hashable {
+    let title: String
     let time: Double
 }

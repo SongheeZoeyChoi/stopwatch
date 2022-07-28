@@ -27,7 +27,6 @@ class StopwatchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
         configureCollectionView()
         bind()
@@ -83,44 +82,35 @@ class StopwatchViewController: BaseViewController {
         datasource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecordCell", for: indexPath) as? RecordCell else { return nil }
             
-            cell.configure(item: item, index: indexPath.item)
+            cell.configure(item: item)
             return cell
         })
         
         // layout
         collectionView.collectionViewLayout = layout()
-        
-        // data
-        initDataSource()
-    }
-    
-    private func initDataSource() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems([], toSection: .main)
-        datasource.apply(snapshot)
     }
     
     private func applyItems(_ items: [RecordInfo]) {
-        var snapshot = datasource.snapshot()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([.main])
         snapshot.appendItems(items, toSection: .main)
         datasource.apply(snapshot)
     }
     
     private func bind() {
-        // output : data binding
         viewModel.mainTime
             .receive(on: RunLoop.main)
             .sink { time in
                 print("메인시간 \(time)")
-                self.timeLabel.text = String(format: "%.2f", time)
+//                self.timeLabel.text = String(format: "%.2f", time)
+                self.timeLabel.text = Utils.transStopwatchTime(time)
             }.store(in: &subscriptions)
         
         viewModel.$items
             .receive(on: RunLoop.main)
-            .sink { item in
-                print("기록된 Lap 시간: \(item)")
-                self.applyItems(item)
+            .sink { items in
+                print("기록된 Lap 시간: \(items)")
+                self.applyItems(items.reversed())
             }.store(in: &subscriptions)
     }
     
@@ -135,26 +125,16 @@ class StopwatchViewController: BaseViewController {
         return UICollectionViewCompositionalLayout(section: section)
     }
     
+    
+    // MARK: Action
     @IBAction func onClickStart(_ sender: Any) { // or Stop
-        if viewModel.isPlaying {
-            self.viewModel.stopTimer()
-        } else {
-            self.viewModel.startTimer()
-        }
-        viewModel.isPlaying.toggle()
+        viewModel.onClickStartButton()
         updateButtonUI()
     }
     
     @IBAction func onClickReset(_ sender: Any) { // or lap
-        if viewModel.isPlaying {
-            self.viewModel.lapTimer()
-        } else {
-            self.viewModel.resetTimer()
-            self.initDataSource()
-        }
+        viewModel.onClickResetButton()
         updateButtonUI()
     }
-    
-    
     
 }
