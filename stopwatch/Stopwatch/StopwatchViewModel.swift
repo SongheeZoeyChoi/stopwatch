@@ -81,18 +81,20 @@ final class StopwatchViewModel {
         let item = RecordInfo(title: "Lap \(numOfItems + 1)",time: lappedTime, isMax: false, isMin: false)
         tempItems.append(item)
         
-        let maxRecord = tempItems.max { a, b in a.time < b.time }
-        let minRecord = tempItems.min { a, b in a.time < b.time }
-        print("song \(maxRecord)")
-        print("song \(minRecord)")
-        
-        tempItems = tempItems.map {
-            if maxRecord == $0 {
-                return RecordInfo(title: $0.title, time: $0.time, isMax: true, isMin: false)
-            } else if minRecord == $0 {
-                return RecordInfo(title: $0.title, time: $0.time, isMax: false, isMin: true)
-            } else {
-                return RecordInfo(title: $0.title, time: $0.time, isMax: false, isMin: false)
+        if tempItems.count > 1 {
+            let maxRecord = tempItems.max { a, b in a.time < b.time }
+            let minRecord = tempItems.min { a, b in a.time < b.time }
+            print("song \(maxRecord)")
+            print("song \(minRecord)")
+            
+            tempItems = tempItems.map {
+                if maxRecord == $0 {
+                    return RecordInfo(title: $0.title, time: $0.time, isMax: true, isMin: false)
+                } else if minRecord == $0 {
+                    return RecordInfo(title: $0.title, time: $0.time, isMax: false, isMin: true)
+                } else {
+                    return RecordInfo(title: $0.title, time: $0.time, isMax: false, isMin: false)
+                }
             }
         }
         

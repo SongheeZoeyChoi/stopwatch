@@ -32,7 +32,7 @@ class RecordCell: UICollectionViewCell {
         if !item.isMin && !item.isMax {
             self.lapLabel.textColor = .label
             self.recordTimeLabel.textColor = .label
-        }
+        } 
         
     }
     
