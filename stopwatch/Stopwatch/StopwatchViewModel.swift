@@ -40,7 +40,8 @@ final class StopwatchViewModel {
     
     var timer: Timer?
     var isPlaying: Bool = false
-    let TIME_INTERVAL = 0.01
+    let TIME_INTERVAL: CGFloat = 0.01
+    let CELL_HEIGHT: CGFloat = 50
     var time = Double()
     var lappedTime = Double()
     
@@ -52,7 +53,7 @@ final class StopwatchViewModel {
     }
     
     func setCollectionViewHeight() -> CGFloat {
-        return CGFloat(numOfItems * 50)
+        return CGFloat(numOfItems) * CELL_HEIGHT
     }
     
     // input : click action //
