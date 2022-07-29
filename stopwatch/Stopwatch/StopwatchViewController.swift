@@ -14,7 +14,12 @@ class StopwatchViewController: BaseViewController {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
+    @IBOutlet weak var lapHeaderView: UIView!
+    @IBOutlet weak var lapHeaderTitleLabel: UILabel!
+    @IBOutlet weak var lapHeaderTimeLabel: UILabel!
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
     typealias Item = RecordInfo
     enum Section {
@@ -37,7 +42,7 @@ class StopwatchViewController: BaseViewController {
         resetButton.layer.cornerRadius = 40
         startButton.layer.masksToBounds = true
         startButton.layer.cornerRadius = 40
-        
+        lapHeaderView.isHidden = true
         updateButtonUI()
     }
     
@@ -83,6 +88,7 @@ class StopwatchViewController: BaseViewController {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecordCell", for: indexPath) as? RecordCell else { return nil }
             
             cell.configure(item: item)
+            self.collectionViewHeight.constant = self.viewModel.setCollectionViewHeight()
             return cell
         })
         
@@ -102,8 +108,16 @@ class StopwatchViewController: BaseViewController {
             .receive(on: RunLoop.main)
             .sink { time in
                 print("메인시간 \(time)")
-//                self.timeLabel.text = String(format: "%.2f", time)
                 self.timeLabel.text = Utils.transStopwatchTime(time)
+            }.store(in: &subscriptions)
+        
+        viewModel.lapTime
+            .receive(on: RunLoop.main)
+            .sink { item in
+                print("랩제목:\(item.title) 랩시간: \(item.time)")
+                self.lapHeaderTitleLabel.text = item.title
+                self.lapHeaderTimeLabel.text = Utils.transStopwatchTime(item.time)
+                self.lapHeaderView.isHidden = item.time == 0 ? true : false
             }.store(in: &subscriptions)
         
         viewModel.$items

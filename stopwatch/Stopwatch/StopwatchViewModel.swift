@@ -12,13 +12,15 @@ final class StopwatchViewModel {
     
 // 타이머는 한개
 
-// - 초기 : [o]시작버튼 -> 랩 비활성화
+// - 초기 : [o]시작버튼
+//   -> 랩 비활성화
+//   -> 헤더랩뷰 숨김
 
 // 초기 시작버튼 눌렀을 때
 //   -> [o]랩 버튼 활성화
 //   -> [o]중단 버튼으로 변경
 //   -> [o]Timer start -> label에 데이터 바인딩 (비동기로 계속 타이머 유지되어야함)
-//   -> [ ]콜렉션뷰 append -> label에 데이터 바인딩(비동기로 계속 타이머 유지되어야함)
+//   -> [o]헤더랩뷰에 값 보냄 -> label에 데이터 바인딩(비동기로 계속 타이머 유지되어야함)
 
 // [o]중단 버튼 눌렀을 때
 //   -> [o]Timer pause
@@ -30,8 +32,8 @@ final class StopwatchViewModel {
 //   -> [o]타이머 다시 시작
 //   -> [o]이후동작은 초기 시작버튼 눌렀을 때와 동일
 
-// 랩 버튼 터치시
-//   -> 콜렉션뷰에 아이템 append
+// [o]랩 버튼 터치시
+//   -> [o]콜렉션뷰에 아이템 append
 
     @Published var items: [RecordInfo] = []
     var subscriptions = Set<AnyCancellable>()
@@ -43,6 +45,15 @@ final class StopwatchViewModel {
     var lappedTime = Double()
     
     let mainTime = CurrentValueSubject<Double, Never>(0)
+    let lapTime = PassthroughSubject<RecordInfo, Never>()
+    
+    var numOfItems : Int {
+        return items.count
+    }
+    
+    func setCollectionViewHeight() -> CGFloat {
+        return CGFloat(numOfItems * 50)
+    }
     
     // input : click action //
     func startTimer() {
@@ -50,8 +61,8 @@ final class StopwatchViewModel {
             self.time += self.TIME_INTERVAL
             self.lappedTime += self.TIME_INTERVAL
             self.mainTime.send(self.time)
+            self.lapTime.send(RecordInfo(title: "Lap \(self.numOfItems + 1)", time: self.lappedTime))
         }
-        // TODO: 콜렉션뷰 맨 나중에 기록되는 라벨 비동기 연결
     }
     
     func stopTimer() {
@@ -59,7 +70,7 @@ final class StopwatchViewModel {
     }
     
     func lapTimer() {
-        let item = RecordInfo(title: "Lap \(items.count + 1)",time: lappedTime)
+        let item = RecordInfo(title: "Lap \(numOfItems + 1)",time: lappedTime)
         self.items.append(item)
         self.lappedTime = 0
     }
@@ -67,8 +78,10 @@ final class StopwatchViewModel {
     func resetTimer() {
         self.invalidateTimer()
         self.time = 0
+        self.lappedTime = 0
         self.items = []
         self.mainTime.send(self.time)
+        self.lapTime.send(RecordInfo(title: "", time: self.lappedTime))
     }
     
     func invalidateTimer() {
