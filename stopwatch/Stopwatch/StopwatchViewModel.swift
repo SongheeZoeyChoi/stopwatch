@@ -32,8 +32,11 @@ final class StopwatchViewModel {
 //   -> [o]타이머 다시 시작
 //   -> [o]이후동작은 초기 시작버튼 눌렀을 때와 동일
 
-// [o]랩 버튼 터치시
+// []랩 버튼 터치시
 //   -> [o]콜렉션뷰에 아이템 append
+//   -> []기록된 랩타입 array중에서 최대값, 최소값을 구한다
+//   -> 해당 값의 인덱스를 구해서 isMax, isMin 값을 true로 변경해주고
+//   -> 나머지는 isMax, isMin 값을 false로 변경해준다
 
     @Published var items: [RecordInfo] = []
     var subscriptions = Set<AnyCancellable>()
@@ -47,6 +50,9 @@ final class StopwatchViewModel {
     
     let mainTime = CurrentValueSubject<Double, Never>(0)
     let lapTime = PassthroughSubject<RecordInfo, Never>()
+    
+    
+    
     
     var numOfItems : Int {
         return items.count
@@ -62,7 +68,7 @@ final class StopwatchViewModel {
             self.time += self.TIME_INTERVAL
             self.lappedTime += self.TIME_INTERVAL
             self.mainTime.send(self.time)
-            self.lapTime.send(RecordInfo(title: "Lap \(self.numOfItems + 1)", time: self.lappedTime))
+            self.lapTime.send(RecordInfo(title: "Lap \(self.numOfItems + 1)", time: self.lappedTime, isMax: false, isMin: false))
         }
     }
     
@@ -71,8 +77,26 @@ final class StopwatchViewModel {
     }
     
     func lapTimer() {
-        let item = RecordInfo(title: "Lap \(numOfItems + 1)",time: lappedTime)
-        self.items.append(item)
+        var tempItems = self.items
+        let item = RecordInfo(title: "Lap \(numOfItems + 1)",time: lappedTime, isMax: false, isMin: false)
+        tempItems.append(item)
+        
+        let maxRecord = tempItems.max { a, b in a.time < b.time }
+        let minRecord = tempItems.min { a, b in a.time < b.time }
+        print("song \(maxRecord)")
+        print("song \(minRecord)")
+        
+        tempItems = tempItems.map {
+            if maxRecord == $0 {
+                return RecordInfo(title: $0.title, time: $0.time, isMax: true, isMin: false)
+            } else if minRecord == $0 {
+                return RecordInfo(title: $0.title, time: $0.time, isMax: false, isMin: true)
+            } else {
+                return RecordInfo(title: $0.title, time: $0.time, isMax: false, isMin: false)
+            }
+        }
+        
+        self.items = tempItems
         self.lappedTime = 0
     }
     
@@ -82,7 +106,7 @@ final class StopwatchViewModel {
         self.lappedTime = 0
         self.items = []
         self.mainTime.send(self.time)
-        self.lapTime.send(RecordInfo(title: "", time: self.lappedTime))
+        self.lapTime.send(RecordInfo(title: "", time: self.lappedTime, isMax: false, isMin: false))
     }
     
     func invalidateTimer() {
