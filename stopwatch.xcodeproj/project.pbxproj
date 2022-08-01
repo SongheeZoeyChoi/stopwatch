@@ -13,6 +13,7 @@
 		6B08F2212890C44400698ADE /* StopwatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B08F2202890C44400698ADE /* StopwatchViewModel.swift */; };
 		6BAC7B81288F9B080067AF0B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAC7B80288F9B080067AF0B /* SettingsViewController.swift */; };
 		6BB444C22892262600350947 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB444C12892262600350947 /* Utils.swift */; };
+		6BB444C628975CF600350947 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB444C528975CF600350947 /* MainNavigationViewController.swift */; };
 		6BCCA217288F6C5600CF8C65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA216288F6C5600CF8C65 /* AppDelegate.swift */; };
 		6BCCA219288F6C5600CF8C65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA218288F6C5600CF8C65 /* SceneDelegate.swift */; };
 		6BCCA221288F6C5600CF8C65 /* stopwatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA21F288F6C5600CF8C65 /* stopwatch.xcdatamodeld */; };
@@ -26,8 +27,6 @@
 		6BCCA24F288F7D1F00CF8C65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA24E288F7D1F00CF8C65 /* LoginViewController.swift */; };
 		6BCCA251288F7E9B00CF8C65 /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA250288F7E9B00CF8C65 /* StopwatchViewController.swift */; };
 		6BCCA253288F843F00CF8C65 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA252288F843F00CF8C65 /* Const.swift */; };
-		6BCCA255288F8BC000CF8C65 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA254288F8BC000CF8C65 /* MainNavigationViewController.swift */; };
-		6BCCA257288F8C0500CF8C65 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCA256288F8C0500CF8C65 /* MainTabBarController.swift */; };
 		6BCCA25B288F9A8F00CF8C65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BCCA25A288F9A8F00CF8C65 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +54,7 @@
 		6B08F2202890C44400698ADE /* StopwatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewModel.swift; sourceTree = "<group>"; };
 		6BAC7B80288F9B080067AF0B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6BB444C12892262600350947 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		6BB444C528975CF600350947 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		6BCCA213288F6C5600CF8C65 /* stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCCA216288F6C5600CF8C65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BCCA218288F6C5600CF8C65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,8 +71,6 @@
 		6BCCA24E288F7D1F00CF8C65 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6BCCA250288F7E9B00CF8C65 /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
 		6BCCA252288F843F00CF8C65 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
-		6BCCA254288F8BC000CF8C65 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
-		6BCCA256288F8C0500CF8C65 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		6BCCA25A288F9A8F00CF8C65 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,15 +154,15 @@
 				6B08F219288FD40B00698ADE /* BaseViewController.swift */,
 				6BCCA258288F9A1B00CF8C65 /* Login */,
 				6BCCA259288F9A2300CF8C65 /* Views */,
+				6B08F21F2890C0F600698ADE /* Model */,
 				6BAC7B7F288F9AEB0067AF0B /* Stopwatch */,
 				6BAC7B82288F9B0B0067AF0B /* Settings */,
+				6BCCA252288F843F00CF8C65 /* Const.swift */,
+				6BB444C12892262600350947 /* Utils.swift */,
 				6BCCA222288F6C5800CF8C65 /* Assets.xcassets */,
 				6BCCA224288F6C5800CF8C65 /* LaunchScreen.storyboard */,
 				6BCCA227288F6C5800CF8C65 /* Info.plist */,
 				6BCCA21F288F6C5600CF8C65 /* stopwatch.xcdatamodeld */,
-				6BCCA252288F843F00CF8C65 /* Const.swift */,
-				6B08F21F2890C0F600698ADE /* Model */,
-				6BB444C12892262600350947 /* Utils.swift */,
 			);
 			path = stopwatch;
 			sourceTree = "<group>";
@@ -199,8 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				6BCCA25A288F9A8F00CF8C65 /* Main.storyboard */,
-				6BCCA254288F8BC000CF8C65 /* MainNavigationViewController.swift */,
-				6BCCA256288F8C0500CF8C65 /* MainTabBarController.swift */,
+				6BB444C528975CF600350947 /* MainNavigationViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -343,8 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB444C628975CF600350947 /* MainNavigationViewController.swift in Sources */,
 				6BCCA251288F7E9B00CF8C65 /* StopwatchViewController.swift in Sources */,
-				6BCCA257288F8C0500CF8C65 /* MainTabBarController.swift in Sources */,
 				6B08F21E2890C0ED00698ADE /* Record.swift in Sources */,
 				6BB444C22892262600350947 /* Utils.swift in Sources */,
 				6BAC7B81288F9B080067AF0B /* SettingsViewController.swift in Sources */,
@@ -353,7 +350,6 @@
 				6B08F21C2890BC5200698ADE /* RecordCell.swift in Sources */,
 				6B08F21A288FD40B00698ADE /* BaseViewController.swift in Sources */,
 				6BCCA24F288F7D1F00CF8C65 /* LoginViewController.swift in Sources */,
-				6BCCA255288F8BC000CF8C65 /* MainNavigationViewController.swift in Sources */,
 				6B08F2212890C44400698ADE /* StopwatchViewModel.swift in Sources */,
 				6BCCA221288F6C5600CF8C65 /* stopwatch.xcdatamodeld in Sources */,
 				6BCCA253288F843F00CF8C65 /* Const.swift in Sources */,

@@ -2,7 +2,7 @@
 //  MainNavigationViewController.swift
 //  stopwatch
 //
-//  Created by Songhee Choi on 2022/07/26.
+//  Created by Songhee Choi on 2022/08/01.
 //
 
 import UIKit
