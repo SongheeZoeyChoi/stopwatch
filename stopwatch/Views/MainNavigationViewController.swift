@@ -6,24 +6,31 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class MainNavigationViewController: UINavigationController {
-
+    
+    let userData = AppDelegate.user
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUserData()
+        setToken()
+    }
+    private func setUserData() {
+        UserDefaults.standard.set(userData?.profile?.email, forKey: "USER_EMAIL")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setToken() {
+    
+        print("song : \(userData?.profile?.email)")
+        userData?.authentication.do(freshTokens: { authentication, error in
+            guard error == nil else {return}
+            guard let authentication = authentication else {return}
+            
+            let idToken = authentication.idToken
+            print("song token: \(idToken)")
+        })
     }
-    */
-
+    
 }

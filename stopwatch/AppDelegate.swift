@@ -13,6 +13,8 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    public static var user: GIDGoogleUser!
+    
     // google 로그인 //
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         var handled: Bool
@@ -43,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else {
                 print("song 로그인 상태")
                 sbName = RootView.main.rawValue
+                AppDelegate.user = user
             }
             let storyboard = UIStoryboard(name: sbName, bundle: nil)
             let vc = storyboard.instantiateInitialViewController()

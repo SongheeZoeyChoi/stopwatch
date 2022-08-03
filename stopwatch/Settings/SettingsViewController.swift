@@ -10,9 +10,15 @@ import GoogleSignIn
 
 class SettingsViewController: BaseViewController {
 
+    @IBOutlet weak var userEmailLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI()
+    }
+    
+    private func setupUI() {
+        userEmailLabel.text = UserDefaults.standard.string(forKey: "USER_EMAIL")
     }
     
     private func moveLogin() {
