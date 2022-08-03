@@ -310,7 +310,7 @@
         <!--Item-->
         <scene sceneID="vZg-j4-wsQ">
             <objects>
-                <navigationController storyboardIdentifier="MainNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="JIc-x4-kLj" customClass="MainNavigationViewController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="JIc-x4-kLj" customClass="MainNavigationViewController" customModule="stopwatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="nn2-PW-vcb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0HI-Q3-avc">

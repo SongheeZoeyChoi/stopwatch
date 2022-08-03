@@ -16,7 +16,7 @@ class SettingsViewController: BaseViewController {
     }
     
     private func moveLogin() {
-        moveRootViewController()
+        moveRootLoginViewController()
     }
     
     

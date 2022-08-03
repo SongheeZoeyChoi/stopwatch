@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum RootView: String{
+    case login = "Login"
+    case main = "Main"
+}
+
 class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -17,7 +22,7 @@ class BaseViewController: UIViewController {
     
 
     //MARK: MOVE Page Function
-    func moveRootViewController() {
+    func moveRootLoginViewController() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
         
