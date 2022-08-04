@@ -60,7 +60,12 @@ final class StopwatchViewModel {
     }
     
     func setCollectionViewHeight() -> CGFloat {
-        return CGFloat(numOfItems) * CELL_HEIGHT
+        if isPlaying {
+            return CGFloat(numOfItems) * CELL_HEIGHT
+        } else {
+            return .zero
+        }
+        
     }
     
     func invalidateTimer() {

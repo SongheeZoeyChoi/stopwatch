@@ -18,7 +18,7 @@ class MainNavigationViewController: UINavigationController {
         setToken()
     }
     private func setUserData() {
-        UserDefaults.standard.set(userData?.profile?.email, forKey: "USER_EMAIL")
+        UserDefaults.standard.set(userData?.profile?.email, forKey: Const.UserDataKey.email.rawValue)
     }
     
     private func setToken() {

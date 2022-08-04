@@ -18,7 +18,7 @@ class SettingsViewController: BaseViewController {
     }
     
     private func setupUI() {
-        userEmailLabel.text = UserDefaults.standard.string(forKey: "USER_EMAIL")
+        userEmailLabel.text = UserDefaults.standard.string(forKey: Const.UserDataKey.email.rawValue)
     }
     
     private func moveLogin() {
@@ -29,7 +29,7 @@ class SettingsViewController: BaseViewController {
     //MARK: Action
     @IBAction func onClickLogout(_ sender: Any) {
         GIDSignIn.sharedInstance.signOut()
-        
+        UserDefaults.standard.removeObject(forKey: Const.UserDataKey.email.rawValue)
         self.moveLogin()
     }
     
